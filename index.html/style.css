@@ -1,0 +1,366 @@
+/* Loader */
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.spinner {
+  width: 60px; height: 60px;
+  border: 6px solid #0ff;
+  border-top: 6px solid #111;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Global Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #1ba2a7;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+.main-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  background: #2f9715;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgb(196, 65, 185);
+}
+
+/* Logo Container */
+.main-header .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between image and text */
+}
+
+/* Logo Image */
+.main-header .logo img {
+  width: 60px;            /* adjust size */
+  height: 60px;           /* make it square */
+  border-radius: 50%;     /* makes it perfectly round */
+  object-fit: cover;      /* keeps the image clear inside circle */
+  border: 2px solid #0ff; /* optional glowing border */
+  box-shadow: 0 0 15px #0ff; /* optional glow effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Logo Hover Animation */
+.main-header .logo img:hover {
+  transform: scale(1.1) rotate(10deg); /* subtle zoom & rotation */
+  box-shadow: 0 0 30px #0ff;          /* glow intensifies on hover */
+}
+
+/* Logo Text */
+.main-header .logo h1 {
+  font-size: 1.5rem;
+  color: #0ff;
+  margin: 0;
+  font-weight: 700;
+  text-shadow: 0 0 10px #0ff;
+}
+
+.main-header img {
+  width: 50px;
+  height: 50px;
+}
+.main-header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #0ff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.main-header nav a:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+ 
+
+
+/* Animated Gradient Hero Background */
+.hero {
+  padding: 150px 5% 100px;
+  text-align: center;
+  min-height: 80vh;
+  background: linear-gradient(-45deg, #0ff, #111, #0ff, #111);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+ 
+
+/* Hero Section */
+.hero {
+  padding: 150px 5% 100px;
+  text-align: center;
+  background: linear-gradient(120deg,#0ff,#111);
+  min-height: 80vh;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  animation: fadeIn 2s ease-in-out;
+}
+.explore-btn {
+  padding: 12px 30px;
+  background: #0ff;
+  color: #000;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: 0.3s;
+}
+.explore-btn:hover {
+  background: #fff;
+  color: #0ff;
+  transform: scale(1.05);
+}
+/*slides bar section*/
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* posion the "previes button" to the left*/
+.prev {
+  left:0;
+  border-radius: 3px 3px 0 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(248, 100, 100, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+/* end of slides section*/
+
+
+
+/* About */
+.about, .skills, .projects {
+  padding: 80px 5%;
+  text-align: center;
+}
+.about h2, .skills h2, .projects h2 {
+  color: #0ff;
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+/* Skills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.skill-box {
+  background: #222;
+  padding: 15px 25px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.skill-box:hover {
+  background: #0ff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Projects */
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+.card {
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+.card h3 {
+  margin: 10px 0;
+  color: #0ff;
+}
+.card p {
+  padding: 0 10px 15px;
+}
+
+/* Footer */
+footer {
+  padding: 50px 5%;
+  background: #111;
+  text-align: center;
+}
+footer .socials a {
+  margin: 0 10px;
+  color: #0ff;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+footer .socials a:hover {
+  color: #fff;
+}
+
+
+
+/* Animated Social Icons */
+footer .socials a {
+  margin: 0 10px;
+  color: #0ff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+footer .socials a:hover {
+  color: #fff;
+  transform: rotate(15deg) scale(1.2);
+  text-shadow: 0 0 10px #0ff;
+}
+
+
+/* Footer Neon Glow */
+footer {
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg,#0ff,#111,#0ff,#111);
+  opacity: 0.1;
+  z-index: 0;
+}
+footer * { position: relative; z-index: 1; }
+
+
+
+/* Animations */
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px #0ff; }
+  50% { box-shadow: 0 0 35px #0ff; }
+  100% { box-shadow: 0 0 15px #0ff; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
